@@ -1,0 +1,22 @@
+<div class="pokedex-container">
+    <div class="form-container">
+        <form [formGroup]="pokemonForm" (ngSubmit) = "onSubmit()">
+            <input formControlName = "name" placeholder="Pokemon Name">
+            <input formControlName = "type" placeholder="Pokemon Type">
+            <input formControlName = "level" placeholder="Pokemon Level">
+            <input formControlName = "nature" placeholder="Pokemon Nature">
+            <button type="submit" [disabled] = "!pokemonForm.valid">Add to Pokemon List</button>
+        </form>
+    </div>
+
+    <div class="team-grid">
+        @for(p of pokemonservice.pokemonList(); track p._id){
+            <div class="card">
+                <h3>{{ p.name }} (Lv. {{ p.level }})</h3>
+                <p>{{ p.type }} || {{ p.nature }}</p>
+            </div>
+        } @empty {
+            <p>No Pokemon Recorded.</p>
+        }
+    </div>
+</div>
