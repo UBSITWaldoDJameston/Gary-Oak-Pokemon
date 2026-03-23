@@ -9,14 +9,21 @@
         </form>
     </div>
 
-    <div class="team-grid">
-        @for(p of pokemonservice.pokemonList(); track p._id){
+    <div class="pokemoen-list">
+        <div class="form-wrapper"> 
+            @for(p of pokemonservice.pokemonList(); track p._id){
             <div class="card">
                 <h3>{{ p.name }} (Lv. {{ p.level }})</h3>
                 <p>{{ p.type }} || {{ p.nature }}</p>
+                <div class="pokemon-image">
+                     <img [src]="'https://projectpokemon.org/images/normal-sprite/' + p.name.toLowerCase() + '.gif'" [alt]="p.name">
+                </div>
             </div>
+             
         } @empty {
             <p>No Pokemon Recorded.</p>
-        }
+        } 
+        </div>
+
     </div>
 </div>

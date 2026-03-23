@@ -1,4 +1,49 @@
-/* Main Layout */
+.pokemon-list-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.section-divider {
+  margin: 40px 0;
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
+.pokemoen-list {
+  background: #ffffff;
+  border: 1px solid #eee;
+  border-radius: 12px; 
+  padding: 0 0 20px 0; 
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.pokemon-card { width: 200px; }
+.mart-card { width: 140px; padding-top: 10px; }
+
+.pokemoen-list :hover {
+  transform: translateY(-5px); 
+}
+
+.pokemon-image {
+  width: 100%;
+  height: 200px;  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+}
+
+.pokemon-image img {
+  max-height: 120px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
 .form-wrapper {
   max-width: 500px;
   margin: 20px auto;
@@ -8,7 +53,6 @@
   font-family: sans-serif;
 }
 
-/* Inputs and Buttons */
 form { display: flex; flex-direction: column; gap: 10px; }
 
 input {
@@ -28,7 +72,7 @@ button {
 
 button:disabled { background: #ccc; }
 
-/* Grid for the Winning Team */
+
 .team-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -36,7 +80,6 @@ button:disabled { background: #ccc; }
   margin-top: 20px;
 }
 
-/* Pokemon Cards */
 .card {
   border: 1px solid #ddd;
   border-left: 5px solid #ffde00;
